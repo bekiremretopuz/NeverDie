@@ -1,14 +1,13 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
-using UnityEngine; 
-public class Const : MonoBehaviour {  
-
+using UnityEngine;
+public class Const : MonoBehaviour {
     public static string[] teamName = new[] {
       "Black",
       "White",
       "Red"
       };
-
+   
     public static int[] Levels = new[] {
         1,
         2,

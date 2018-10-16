@@ -3,13 +3,9 @@ using System.Collections.Generic;
 using UnityEngine;
 
 public class BackgroundController : MonoBehaviour {
-    Background _backgroundInterface = new Background();
+    private Background _backgroundInterface;
 
-    public BackgroundController()  {
-        this.initProperties();
-    }
-
-    public void initProperties () {
-        this._backgroundInterface.initProperties();
-	}
+    public BackgroundController() {
+        this._backgroundInterface = new Background();
+    } 
 }

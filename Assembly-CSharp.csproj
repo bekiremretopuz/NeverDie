@@ -61,10 +61,13 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Assets\game.cs" />
+    <Compile Include="Assets\EventManager\EventManager.cs" />
     <Compile Include="Assets\Scripts\Const.cs" />
     <Compile Include="Assets\Scripts\Controller\BackgroundController.cs" />
     <Compile Include="Assets\Scripts\Interfaces\InterfaceAction.cs" />
+    <Compile Include="Assets\Scripts\Modules\Animation.cs" />
+    <Compile Include="Assets\Scripts\Parts\Sprite.cs" />
+    <Compile Include="Assets\Scripts\Stage\AssetLoader.cs" />
     <Compile Include="Assets\Scripts\Stage\MainGame.cs" />
     <Compile Include="Assets\Scripts\View\Background.cs" />
     <Reference Include="UnityEditor.StandardEvents">
