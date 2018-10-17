@@ -9,6 +9,7 @@ public class MainGame : MonoBehaviour {
     private UnityAction<string> animationstatus; // Listen to AnimationController 
 
     public MainGame() { 
+
     }
 
     private void Awake() {

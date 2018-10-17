@@ -7,4 +7,4 @@ public class AssetLoader : MonoBehaviour
         //Resources.Load<Sprite>("Assets/Resources/Text/Sprites/bg.png");
         //MainGame MainGame = new MainGame();//onloadComplete =
     }
-}
+} 

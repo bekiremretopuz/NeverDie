@@ -7,7 +7,7 @@ public class Const : MonoBehaviour {
       "White",
       "Red"
       };
-   
+
     public static int[] Levels = new[] {
         1,
         2,
@@ -19,5 +19,5 @@ public class Const : MonoBehaviour {
         8,
         9,
         10
-    };
+    }; 
 }
