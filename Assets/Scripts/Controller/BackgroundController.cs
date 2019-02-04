@@ -7,5 +7,5 @@ public class BackgroundController : MonoBehaviour {
 
     public BackgroundController() {
         this._backgroundInterface = new Background();
-    } 
+    }
 }

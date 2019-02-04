@@ -2,16 +2,16 @@
 using System.Collections.Generic;
 using UnityEngine.Events;
 using UnityEngine;
+using DG.Tweening;
 
 public class MainGame : MonoBehaviour {
-
     private UnityAction<string> actiontaken; //Listen to  BackgroundController
     private UnityAction<string> animationstatus; // Listen to AnimationController 
 
     public MainGame() { 
-
     }
 
+    #region EventsListener
     private void Awake() {
         actiontaken = new UnityAction<string>(onController);
         animationstatus = new UnityAction<string>(onAnimationStatus);
@@ -24,14 +24,17 @@ public class MainGame : MonoBehaviour {
 
     private void OnDisable() {
         EventManager.RemoveListener("actiontaken", actiontaken);
-        EventManager.RemoveListener("animationstatus", animationstatus);
+        EventManager.RemoveListener("animationstatus", animationstatus); 
     }
 
-    void onController(string value) {
+    private void onController(string value) {
         Debug.Log("Controller: " + value);
     }
 
-    void onAnimationStatus(string value) { 
+    private void onAnimationStatus(string value) {
         Debug.Log("Animation: " + value);
-    } 
+    }
+    #endregion
+
+
 }

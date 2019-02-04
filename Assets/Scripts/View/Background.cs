@@ -4,14 +4,14 @@ using UnityEngine;
 using UnityEngine.U2D;
 using UnityEngine.UI;
 
-public class Background : MonoBehaviour { 
-    [SerializeField]
-    private SpriteAtlas _backgroundSpriteAtlas; 
-    [SerializeField]
-    private SpriteRenderer _controlBackground;  
-    [SerializeField]
-    private Button _spinButton; 
-    private SpriteState _spriteState = new SpriteState();
+public class Background : MonoBehaviour {
+    private Object _controlPanelBg;
+    private Object _spinButton;
+    private Sprite2D CreateSprite;
+
+    Buttons SpinButton = new Buttons { normal = "Sprites/interface/control/btn_spin_out", over = "Sprites/interface/control/btn_spin_over", down = "Sprites/interface/control/btn_spin_down", disabled = "Sprites/interface/control/btn_spin_disabled" };
+    Buttons AutoPlayButton = new Buttons { normal = "Sprites/interface/control/btn_spin_out", over = "Sprites/interface/control/btn_spin_over", down = "Sprites/interface/control/btn_spin_down", disabled = "Sprites/interface/control/btn_spin_disabled" };
+    Sprites ControlPanel = new Sprites { normal = "Sprites/interface/control/control_panel_bg" };
 
     public class Buttons {
         public string normal { get; set; }
@@ -20,23 +20,23 @@ public class Background : MonoBehaviour {
         public string disabled { get; set; }
     }
 
-    Buttons SpinButton = new Buttons { normal = "btn_spin_out", over = "btn_spin_over", down = "btn_spin_down", disabled = "btn_spin_disabled" };
-    Buttons AutoPlayButton = new Buttons { normal = "btn_spin_out", over = "btn_spin_over", down = "btn_spin_down", disabled = "btn_spin_disabled" };
+    public class Sprites {
+        public string normal { get; set; }
+    }
 
-    void Awake() { 
-        this._controlBackground = GetComponent<SpriteRenderer>();
-        this.initProperties(); 
+    void Awake() {
+        this.CreateSprite = GetComponent<Sprite2D>();
+        this.initProperties();
     }
 
     private void initProperties() {
-        this._controlBackground.sprite = _backgroundSpriteAtlas.GetSprite("control_panel_bg");
-        this._controlBackground.name = "ControlPanelBackground";
-        this._spinButton.GetComponent<Image>().sprite = _backgroundSpriteAtlas.GetSprite(SpinButton.normal);
+        this._controlPanelBg = new Sprite2D(0, 0, ControlPanel.normal, "ControlPanelBG", "Background");
+        this._spinButton = new Sprite2D(0, 0, SpinButton.normal, "SpinButton", "Background");
     }
 
     void Update() {
         if (Input.GetKeyDown("q")) {
             EventManager.on("actiontaken", "q pressed");
-        }  
-    } 
+        }
+    }
 }

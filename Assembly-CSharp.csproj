@@ -61,15 +61,26 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Assets\EventManager\EventManager.cs" />
     <Compile Include="Assets\Scripts\Const.cs" />
     <Compile Include="Assets\Scripts\Controller\BackgroundController.cs" />
+    <Compile Include="Assets\Scripts\DOTween\Modules\DOTweenModuleAudio.cs" />
+    <Compile Include="Assets\Scripts\DOTween\Modules\DOTweenModulePhysics.cs" />
+    <Compile Include="Assets\Scripts\DOTween\Modules\DOTweenModulePhysics2D.cs" />
+    <Compile Include="Assets\Scripts\DOTween\Modules\DOTweenModuleSprite.cs" />
+    <Compile Include="Assets\Scripts\DOTween\Modules\DOTweenModuleUI.cs" />
+    <Compile Include="Assets\Scripts\DOTween\Modules\DOTweenModuleUnityVersion.cs" />
+    <Compile Include="Assets\Scripts\DOTween\Modules\DOTweenModuleUtils.cs" />
+    <Compile Include="Assets\Scripts\Essentials\Storage.cs" />
+    <Compile Include="Assets\Scripts\EventManager\EventManager.cs" />
+    <Compile Include="Assets\Scripts\Game.cs" />
+    <Compile Include="Assets\Scripts\Helper.cs" />
     <Compile Include="Assets\Scripts\Interfaces\InterfaceAction.cs" />
-    <Compile Include="Assets\Scripts\Modules\Animation.cs" />
-    <Compile Include="Assets\Scripts\Parts\Sprite.cs" />
+    <Compile Include="Assets\Scripts\Modules\Animations.cs" />
+    <Compile Include="Assets\Scripts\Parts\Sprite2D.cs" />
     <Compile Include="Assets\Scripts\Stage\AssetLoader.cs" />
     <Compile Include="Assets\Scripts\Stage\MainGame.cs" />
     <Compile Include="Assets\Scripts\View\Background.cs" />
+    <None Include="Assets\Scripts\DOTween\readme.txt" />
     <Reference Include="UnityEditor.StandardEvents">
       <HintPath>C:/Users/Emre/Desktop/repos/Unity/NeverDie/Library/ScriptAssemblies/UnityEditor.StandardEvents.dll</HintPath>
     </Reference>
@@ -285,6 +296,9 @@
     </Reference>
     <Reference Include="UnityEngine.StandardEvents">
       <HintPath>C:/Users/Emre/AppData/Local/Unity/cache/packages/packages.unity.com/com.unity.standardevents@1.0.13/UnityEngine.StandardEvents.dll</HintPath>
+    </Reference>
+    <Reference Include="DOTween">
+      <HintPath>C:/Users/Emre/Desktop/repos/Unity/NeverDie/Assets/Scripts/DOTween/DOTween.dll</HintPath>
     </Reference>
     <Reference Include="mscorlib">
       <HintPath>C:/Program Files/Unity/Editor/Data/MonoBleedingEdge/lib/mono/unity/mscorlib.dll</HintPath>

@@ -19,5 +19,5 @@ public class Const : MonoBehaviour {
         8,
         9,
         10
-    }; 
+    };
 }
