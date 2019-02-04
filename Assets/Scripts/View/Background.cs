@@ -8,6 +8,7 @@ public class Background : MonoBehaviour {
     private Object _controlPanelBg;
     private Object _spinButton;
     private Sprite2D CreateSprite;
+    private SimpleButton _startButton;
 
     Buttons SpinButton = new Buttons { normal = "Sprites/interface/control/btn_spin_out", over = "Sprites/interface/control/btn_spin_over", down = "Sprites/interface/control/btn_spin_down", disabled = "Sprites/interface/control/btn_spin_disabled" };
     Buttons AutoPlayButton = new Buttons { normal = "Sprites/interface/control/btn_spin_out", over = "Sprites/interface/control/btn_spin_over", down = "Sprites/interface/control/btn_spin_down", disabled = "Sprites/interface/control/btn_spin_disabled" };
@@ -32,6 +33,13 @@ public class Background : MonoBehaviour {
     private void initProperties() {
         this._controlPanelBg = new Sprite2D(0, 0, ControlPanel.normal, "ControlPanelBG", "Background");
         this._spinButton = new Sprite2D(0, 0, SpinButton.normal, "SpinButton", "Background");
+        this._startButton = new SimpleButton(new Rect(50, 50, 250, 250), "Start", "StartButton", GameObject.Find("Background"));
+        this._startButton.OnClick += new SimpleButton.ClickEventHandler(this.a);
+        this._startButton.OnMouseOver += new SimpleButton.OnMouseOverEventHandler(this.a); 
+    }
+
+    private void a() {
+        Debug.Log("zaza");
     }
 
     void Update() {
