@@ -9,6 +9,7 @@ public class MainGame: MonoBehaviour {
 
     private void Awake() {
         DataController _dataController = gameObject.AddComponent<DataController>() as DataController;
+        BackgroundController _backgroundController = gameObject.AddComponent<BackgroundController>() as BackgroundController;
         this.initEvents();
     } 
 

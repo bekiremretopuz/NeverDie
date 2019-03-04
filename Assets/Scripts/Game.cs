@@ -1,6 +1,5 @@
 ﻿using UnityEngine;
-public class Game : MonoBehaviour { 
-#pragma warning disable 1234
+public class Game : MonoBehaviour {  
     private Storage _storage;
     private Service _service;
     private EventManager _eventManager;

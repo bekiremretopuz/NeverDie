@@ -1,12 +1,10 @@
 ﻿using UnityEngine;
 using System;
 
-public class BackgroundController : MonoBehaviour {
-    private GameObject _backgroundInterface;
+public class BackgroundController : MonoBehaviour { 
     private Action<string> _backgroundStatus;
 
     public BackgroundController() {
-        Background _backgroundInterface = gameObject.AddComponent<Background>(); 
         this._backgroundStatus = new Action<string>(onBackgroundStatus);  
         EventManager.AddListener("backgroundStatus", this._backgroundStatus);
     }

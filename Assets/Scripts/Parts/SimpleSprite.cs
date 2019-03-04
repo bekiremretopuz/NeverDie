@@ -6,6 +6,8 @@ public class SimpleSprite {
     private Vector2 _size; 
     private string _name;
     private GameObject _sprite;
+    private SpriteRenderer _renderer;
+    private int zIndex = 0;
 
     public SimpleSprite(Rect PositionSize, string textureName, string name, string parent) { 
         var texture = Resources.Load<Sprite>(textureName) as Sprite;
@@ -17,8 +19,9 @@ public class SimpleSprite {
         this._sprite = new GameObject();
         this._sprite.AddComponent<CanvasRenderer>();
         this._sprite.AddComponent<RectTransform>();
-        SpriteRenderer renderer = this._sprite.AddComponent<SpriteRenderer>();
-        renderer.sprite = texture;
+        this._renderer = this._sprite.AddComponent<SpriteRenderer>();
+        this._renderer.sprite = texture;
+        this._renderer.sortingOrder = zIndex; 
         this._sprite.transform.SetParent(container.transform);
         this._sprite.transform.position = new Vector3(_position.x, _position.y, 0);
         this._sprite.name = this._name; 
@@ -45,7 +48,17 @@ public class SimpleSprite {
         set {
             _position = value;
         }
-    } 
+    }
+
+    public int ZIndex {
+        get {
+            return zIndex;
+        }
+        set {
+            zIndex = value;
+            this._renderer.sortingOrder = value;
+        }
+    }
 
     public string Name {
         get {
