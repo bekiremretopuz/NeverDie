@@ -1,11 +1,17 @@
-﻿using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
+﻿using UnityEngine;
+using System;
 
 public class BackgroundController : MonoBehaviour {
-    private Background _backgroundInterface;
+    private GameObject _backgroundInterface;
+    private Action<string> _backgroundStatus;
 
     public BackgroundController() {
-        this._backgroundInterface = new Background();
+        Background _backgroundInterface = gameObject.AddComponent<Background>(); 
+        this._backgroundStatus = new Action<string>(onBackgroundStatus);  
+        EventManager.AddListener("backgroundStatus", this._backgroundStatus);
+    }
+
+    private void onBackgroundStatus(string action) {
+        Debug.Log("onBackgroundStatus" + action);
     }
 }

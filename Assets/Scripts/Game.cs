@@ -1,20 +1,26 @@
 ﻿using UnityEngine;
-
-public class Game : MonoBehaviour {
+public class Game : MonoBehaviour { 
+#pragma warning disable 1234
     private Storage _storage;
-    private AssetLoader _assetLoader;
-    private MainGame _mainGame;
+    private Service _service;
+    private EventManager _eventManager;
+    private GameObject _mainGame;
     private static Game _instance;
 
-    public Game() {
+    public void Awake() {
         Game._instance = this;
+        this._eventManager = EventManager.instance;
+        this._service = new Service();
         this._storage = new Storage();
-        this._assetLoader = new AssetLoader();
-        this._mainGame = new MainGame();
+        MainGame _mainGame = gameObject.AddComponent<MainGame>() as MainGame;
     }
 
     public Storage storage {
         get { return this._storage; }
+    }
+
+    public Service service {
+        get { return this._service; }
     }
 
     public static Game instance {

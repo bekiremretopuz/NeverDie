@@ -61,27 +61,111 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Assets\Lib\DOTween\Modules\DOTweenModuleAudio.cs" />
+    <Compile Include="Assets\Lib\DOTween\Modules\DOTweenModulePhysics.cs" />
+    <Compile Include="Assets\Lib\DOTween\Modules\DOTweenModulePhysics2D.cs" />
+    <Compile Include="Assets\Lib\DOTween\Modules\DOTweenModuleSprite.cs" />
+    <Compile Include="Assets\Lib\DOTween\Modules\DOTweenModuleUI.cs" />
+    <Compile Include="Assets\Lib\DOTween\Modules\DOTweenModuleUnityVersion.cs" />
+    <Compile Include="Assets\Lib\DOTween\Modules\DOTweenModuleUtils.cs" />
+    <Compile Include="Assets\Lib\SimpleJSON\plugins\SimpleJSON.cs" />
+    <Compile Include="Assets\Lib\SocketIO\Ack.cs" />
+    <Compile Include="Assets\Lib\SocketIO\Decoder.cs" />
+    <Compile Include="Assets\Lib\SocketIO\Encoder.cs" />
+    <Compile Include="Assets\Lib\SocketIO\EnginePacketType.cs" />
+    <Compile Include="Assets\Lib\SocketIO\JSONObject\JSONObject.cs" />
+    <Compile Include="Assets\Lib\SocketIO\JSONObject\JSONTemplates.cs" />
+    <Compile Include="Assets\Lib\SocketIO\JSONObject\VectorTemplates.cs" />
+    <Compile Include="Assets\Lib\SocketIO\Packet.cs" />
+    <Compile Include="Assets\Lib\SocketIO\Parser.cs" />
+    <Compile Include="Assets\Lib\SocketIO\Scripts\Test\TestSocketIO.cs" />
+    <Compile Include="Assets\Lib\SocketIO\SocketIOComponent.cs" />
+    <Compile Include="Assets\Lib\SocketIO\SocketIOEvent.cs" />
+    <Compile Include="Assets\Lib\SocketIO\SocketIOException.cs" />
+    <Compile Include="Assets\Lib\SocketIO\SocketPacketType.cs" />
+    <Compile Include="Assets\Lib\SocketIO\WebsocketSharp\AssemblyInfo.cs" />
+    <Compile Include="Assets\Lib\SocketIO\WebsocketSharp\ByteOrder.cs" />
+    <Compile Include="Assets\Lib\SocketIO\WebsocketSharp\CloseEventArgs.cs" />
+    <Compile Include="Assets\Lib\SocketIO\WebsocketSharp\CloseStatusCode.cs" />
+    <Compile Include="Assets\Lib\SocketIO\WebsocketSharp\CompressionMethod.cs" />
+    <Compile Include="Assets\Lib\SocketIO\WebsocketSharp\ErrorEventArgs.cs" />
+    <Compile Include="Assets\Lib\SocketIO\WebsocketSharp\Ext.cs" />
+    <Compile Include="Assets\Lib\SocketIO\WebsocketSharp\Fin.cs" />
+    <Compile Include="Assets\Lib\SocketIO\WebsocketSharp\HandshakeBase.cs" />
+    <Compile Include="Assets\Lib\SocketIO\WebsocketSharp\HandshakeRequest.cs" />
+    <Compile Include="Assets\Lib\SocketIO\WebsocketSharp\HandshakeResponse.cs" />
+    <Compile Include="Assets\Lib\SocketIO\WebsocketSharp\LogData.cs" />
+    <Compile Include="Assets\Lib\SocketIO\WebsocketSharp\Logger.cs" />
+    <Compile Include="Assets\Lib\SocketIO\WebsocketSharp\LogLevel.cs" />
+    <Compile Include="Assets\Lib\SocketIO\WebsocketSharp\Mask.cs" />
+    <Compile Include="Assets\Lib\SocketIO\WebsocketSharp\MessageEventArgs.cs" />
+    <Compile Include="Assets\Lib\SocketIO\WebsocketSharp\Net\AuthenticationBase.cs" />
+    <Compile Include="Assets\Lib\SocketIO\WebsocketSharp\Net\AuthenticationChallenge.cs" />
+    <Compile Include="Assets\Lib\SocketIO\WebsocketSharp\Net\AuthenticationResponse.cs" />
+    <Compile Include="Assets\Lib\SocketIO\WebsocketSharp\Net\AuthenticationSchemes.cs" />
+    <Compile Include="Assets\Lib\SocketIO\WebsocketSharp\Net\Chunk.cs" />
+    <Compile Include="Assets\Lib\SocketIO\WebsocketSharp\Net\ChunkedRequestStream.cs" />
+    <Compile Include="Assets\Lib\SocketIO\WebsocketSharp\Net\ChunkStream.cs" />
+    <Compile Include="Assets\Lib\SocketIO\WebsocketSharp\Net\Cookie.cs" />
+    <Compile Include="Assets\Lib\SocketIO\WebsocketSharp\Net\CookieCollection.cs" />
+    <Compile Include="Assets\Lib\SocketIO\WebsocketSharp\Net\CookieException.cs" />
+    <Compile Include="Assets\Lib\SocketIO\WebsocketSharp\Net\EndPointListener.cs" />
+    <Compile Include="Assets\Lib\SocketIO\WebsocketSharp\Net\EndPointManager.cs" />
+    <Compile Include="Assets\Lib\SocketIO\WebsocketSharp\Net\HttpBasicIdentity.cs" />
+    <Compile Include="Assets\Lib\SocketIO\WebsocketSharp\Net\HttpConnection.cs" />
+    <Compile Include="Assets\Lib\SocketIO\WebsocketSharp\Net\HttpDigestIdentity.cs" />
+    <Compile Include="Assets\Lib\SocketIO\WebsocketSharp\Net\HttpHeaderInfo.cs" />
+    <Compile Include="Assets\Lib\SocketIO\WebsocketSharp\Net\HttpHeaderType.cs" />
+    <Compile Include="Assets\Lib\SocketIO\WebsocketSharp\Net\HttpListener.cs" />
+    <Compile Include="Assets\Lib\SocketIO\WebsocketSharp\Net\HttpListenerContext.cs" />
+    <Compile Include="Assets\Lib\SocketIO\WebsocketSharp\Net\HttpListenerException.cs" />
+    <Compile Include="Assets\Lib\SocketIO\WebsocketSharp\Net\HttpListenerPrefixCollection.cs" />
+    <Compile Include="Assets\Lib\SocketIO\WebsocketSharp\Net\HttpListenerRequest.cs" />
+    <Compile Include="Assets\Lib\SocketIO\WebsocketSharp\Net\HttpListenerResponse.cs" />
+    <Compile Include="Assets\Lib\SocketIO\WebsocketSharp\Net\HttpStatusCode.cs" />
+    <Compile Include="Assets\Lib\SocketIO\WebsocketSharp\Net\HttpStreamAsyncResult.cs" />
+    <Compile Include="Assets\Lib\SocketIO\WebsocketSharp\Net\HttpUtility.cs" />
+    <Compile Include="Assets\Lib\SocketIO\WebsocketSharp\Net\HttpVersion.cs" />
+    <Compile Include="Assets\Lib\SocketIO\WebsocketSharp\Net\InputChunkState.cs" />
+    <Compile Include="Assets\Lib\SocketIO\WebsocketSharp\Net\InputState.cs" />
+    <Compile Include="Assets\Lib\SocketIO\WebsocketSharp\Net\LineState.cs" />
+    <Compile Include="Assets\Lib\SocketIO\WebsocketSharp\Net\ListenerAsyncResult.cs" />
+    <Compile Include="Assets\Lib\SocketIO\WebsocketSharp\Net\ListenerPrefix.cs" />
+    <Compile Include="Assets\Lib\SocketIO\WebsocketSharp\Net\NetworkCredential.cs" />
+    <Compile Include="Assets\Lib\SocketIO\WebsocketSharp\Net\QueryStringCollection.cs" />
+    <Compile Include="Assets\Lib\SocketIO\WebsocketSharp\Net\ReadBufferState.cs" />
+    <Compile Include="Assets\Lib\SocketIO\WebsocketSharp\Net\RequestStream.cs" />
+    <Compile Include="Assets\Lib\SocketIO\WebsocketSharp\Net\ResponseStream.cs" />
+    <Compile Include="Assets\Lib\SocketIO\WebsocketSharp\Net\Security\SslStream.cs" />
+    <Compile Include="Assets\Lib\SocketIO\WebsocketSharp\Net\WebHeaderCollection.cs" />
+    <Compile Include="Assets\Lib\SocketIO\WebsocketSharp\Net\WebSockets\HttpListenerWebSocketContext.cs" />
+    <Compile Include="Assets\Lib\SocketIO\WebsocketSharp\Net\WebSockets\TcpListenerWebSocketContext.cs" />
+    <Compile Include="Assets\Lib\SocketIO\WebsocketSharp\Net\WebSockets\WebSocketContext.cs" />
+    <Compile Include="Assets\Lib\SocketIO\WebsocketSharp\Opcode.cs" />
+    <Compile Include="Assets\Lib\SocketIO\WebsocketSharp\PayloadData.cs" />
+    <Compile Include="Assets\Lib\SocketIO\WebsocketSharp\Rsv.cs" />
+    <Compile Include="Assets\Lib\SocketIO\WebsocketSharp\WebSocket.cs" />
+    <Compile Include="Assets\Lib\SocketIO\WebsocketSharp\WebSocketException.cs" />
+    <Compile Include="Assets\Lib\SocketIO\WebsocketSharp\WebSocketFrame.cs" />
+    <Compile Include="Assets\Lib\SocketIO\WebsocketSharp\WebSocketState.cs" />
+    <Compile Include="Assets\Lib\SocketIO\WebsocketSharp\WebSocketStream.cs" />
     <Compile Include="Assets\Scripts\Const.cs" />
     <Compile Include="Assets\Scripts\Controller\BackgroundController.cs" />
-    <Compile Include="Assets\Scripts\DOTween\Modules\DOTweenModuleAudio.cs" />
-    <Compile Include="Assets\Scripts\DOTween\Modules\DOTweenModulePhysics.cs" />
-    <Compile Include="Assets\Scripts\DOTween\Modules\DOTweenModulePhysics2D.cs" />
-    <Compile Include="Assets\Scripts\DOTween\Modules\DOTweenModuleSprite.cs" />
-    <Compile Include="Assets\Scripts\DOTween\Modules\DOTweenModuleUI.cs" />
-    <Compile Include="Assets\Scripts\DOTween\Modules\DOTweenModuleUnityVersion.cs" />
-    <Compile Include="Assets\Scripts\DOTween\Modules\DOTweenModuleUtils.cs" />
+    <Compile Include="Assets\Scripts\Essentials\Service.cs" />
     <Compile Include="Assets\Scripts\Essentials\Storage.cs" />
     <Compile Include="Assets\Scripts\EventManager\EventManager.cs" />
     <Compile Include="Assets\Scripts\Game.cs" />
     <Compile Include="Assets\Scripts\Helper.cs" />
-    <Compile Include="Assets\Scripts\Interfaces\InterfaceAction.cs" />
+    <Compile Include="Assets\Scripts\Model\DataController.cs" />
     <Compile Include="Assets\Scripts\Modules\Animations.cs" />
-    <Compile Include="Assets\Scripts\Parts\Button.cs" />
-    <Compile Include="Assets\Scripts\Parts\Sprite2D.cs" />
+    <Compile Include="Assets\Scripts\Parts\SimpleButton.cs" />
+    <Compile Include="Assets\Scripts\Parts\SimpleSprite.cs" />
     <Compile Include="Assets\Scripts\Stage\AssetLoader.cs" />
     <Compile Include="Assets\Scripts\Stage\MainGame.cs" />
     <Compile Include="Assets\Scripts\View\Background.cs" />
-    <None Include="Assets\Scripts\DOTween\readme.txt" />
+    <None Include="Assets\Lib\SocketIO\JSONObject\readme.txt" />
+    <None Include="Assets\Lib\DOTween\readme.txt" />
+    <None Include="Assets\Lib\SocketIO\readme.txt" />
     <Reference Include="UnityEditor.StandardEvents">
       <HintPath>C:/Users/Emre/Desktop/repos/Unity/NeverDie/Library/ScriptAssemblies/UnityEditor.StandardEvents.dll</HintPath>
     </Reference>
@@ -293,7 +377,10 @@
       <HintPath>C:/Program Files/Unity/Editor/Data/UnityExtensions/Unity/UnitySpatialTracking/RuntimeEditor/UnityEngine.SpatialTracking.dll</HintPath>
     </Reference>
     <Reference Include="DOTween">
-      <HintPath>C:/Users/Emre/Desktop/repos/Unity/NeverDie/Assets/Scripts/DOTween/DOTween.dll</HintPath>
+      <HintPath>C:/Users/Emre/Desktop/repos/Unity/NeverDie/Assets/Lib/DOTween/DOTween.dll</HintPath>
+    </Reference>
+    <Reference Include="ICSharpCode.SharpZipLib">
+      <HintPath>C:/Users/Emre/Desktop/repos/Unity/NeverDie/Assets/Lib/SimpleJSON/plugins/ICSharpCode.SharpZipLib.dll</HintPath>
     </Reference>
     <Reference Include="UnityEngine.Analytics">
       <HintPath>C:/Users/Emre/AppData/Local/Unity/cache/packages/packages.unity.com/com.unity.analytics@2.0.16/UnityEngine.Analytics.dll</HintPath>

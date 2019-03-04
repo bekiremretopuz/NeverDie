@@ -1,40 +1,34 @@
-﻿using System.Collections;
+﻿using UnityEngine;
+using System;
 using System.Collections.Generic;
-using UnityEngine.Events;
-using UnityEngine;
-using DG.Tweening;
 
-public class MainGame : MonoBehaviour {
-    private UnityAction<string> actiontaken; //Listen to  BackgroundController
-    private UnityAction<string> animationstatus; // Listen to AnimationController 
+public class MainGame: MonoBehaviour { 
+    private GameObject _dataController;
+    private Action<string> _storageUpdate;
+    private Action<string> _animationStatus;
 
-    public MainGame() { 
-    }
-
-    #region EventsListener
     private void Awake() {
-        actiontaken = new UnityAction<string>(onController);
-        animationstatus = new UnityAction<string>(onAnimationStatus);
-    }
+        DataController _dataController = gameObject.AddComponent<DataController>() as DataController;
+        this.initEvents();
+    } 
 
-    private void OnEnable() {
-        EventManager.AddListener("actiontaken", actiontaken);
-        EventManager.AddListener("animationstatus", animationstatus);
+    public void initEvents() {
+        this._storageUpdate = new Action<string>(onStorageUpdate);
+        this._animationStatus = new Action<string>(onAnimationStatus);
+        EventManager.AddListener("animationStatus", this._animationStatus);
+        EventManager.AddListener("storageUpdate", this._storageUpdate); 
     }
 
     private void OnDisable() {
-        EventManager.RemoveListener("actiontaken", actiontaken);
-        EventManager.RemoveListener("animationstatus", animationstatus); 
+        EventManager.RemoveListener("storageUpdate", this._storageUpdate);
+        EventManager.RemoveListener("animationStatus", this._animationStatus);
     }
 
-    private void onController(string value) {
-        Debug.Log("Controller: " + value);
+    void onStorageUpdate(string action) {
+        Debug.Log("Storage Update" + action);
     }
 
-    private void onAnimationStatus(string value) {
-        Debug.Log("Animation: " + value);
-    }
-    #endregion
-
-
+    void onAnimationStatus(string action) {
+        Debug.Log("Animation Update" + action);
+    } 
 }

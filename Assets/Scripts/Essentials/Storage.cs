@@ -40,11 +40,7 @@ public class Storage {
             return; 
 
         this._storage.Remove(key);
-    }
-
-    public Storage storage {
-        get { return this; }
-    }
+    } 
 }
 
 
