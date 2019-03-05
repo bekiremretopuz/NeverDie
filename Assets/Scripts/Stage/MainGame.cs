@@ -4,10 +4,11 @@ using System.Collections.Generic;
 
 public class MainGame: MonoBehaviour { 
     private GameObject _dataController;
+    private GameObject _backgroundController; 
     private Action<string> _storageUpdate;
     private Action<string> _animationStatus;
 
-    private void Awake() {
+    private void Awake() { 
         DataController _dataController = gameObject.AddComponent<DataController>() as DataController;
         BackgroundController _backgroundController = gameObject.AddComponent<BackgroundController>() as BackgroundController;
         this.initEvents();

@@ -1,7 +1,7 @@
-﻿using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
-
-public class Helper { 
-    //bla bla
+﻿public class Helper : MonoBehaviour {
+    void Start() {
+        AnimatedSprite nonMonoScript = new AnimatedSprite();
+        //Pass MonoBehaviour to non MonoBehaviour class
+        nonMonoScript.monoParser(this);
+    }
 }

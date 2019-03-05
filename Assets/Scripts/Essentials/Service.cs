@@ -6,7 +6,7 @@ public class Service {
     private SocketIOComponent _socket; 
 
     public Service() {
-        GameObject socketIo = GameObject.Find("MainGame");
+        GameObject socketIo = GameObject.Find("GameManager");
         this._socket = socketIo.GetComponent<SocketIOComponent>(); 
         this._socket.On("response", this.onServiceResponse);
     }

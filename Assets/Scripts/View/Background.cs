@@ -1,8 +1,5 @@
-﻿using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
-using UnityEngine.U2D;
-using UnityEngine.UI;
+﻿
+using UnityEngine; 
 
 public class Background : MonoBehaviour {
     private Object _controlPanelBg;
@@ -10,10 +7,12 @@ public class Background : MonoBehaviour {
     private SimpleButton _startButton;
     private SimpleSprite _spinButton;
     private SimpleSprite _controlPanel;
+    private AnimatedSprite _symbolHelio;
 
     Buttons SpinButton = new Buttons { normal = "Sprites/interface/control/btn_spin_out", over = "Sprites/interface/control/btn_spin_over", down = "Sprites/interface/control/btn_spin_down", disabled = "Sprites/interface/control/btn_spin_disabled" };
     Buttons AutoPlayButton = new Buttons { normal = "Sprites/interface/control/btn_spin_out", over = "Sprites/interface/control/btn_spin_over", down = "Sprites/interface/control/btn_spin_down", disabled = "Sprites/interface/control/btn_spin_disabled" };
     Sprites ControlPanel = new Sprites { normal = "Sprites/interface/control/control_panel_bg" };
+    Sprites SymbolHelio = new Sprites { normal = "Sprites/symbol/Helio_2" };
 
     public class Buttons {
         public string normal { get; set; }
@@ -34,19 +33,15 @@ public class Background : MonoBehaviour {
         this._controlPanel = new SimpleSprite(new Rect(0, 0, 1, 1), ControlPanel.normal, "ControlPanelBG", "Background");
         this._controlPanel.ZIndex = 0; //Default ZIndex = 0;
         this._startButton = new SimpleButton(new Rect(0, 0, 1, 1), SpinButton.normal, "StartButton", "Background");
-        this._startButton.OnClick += new SimpleButton.ClickEventHandler(this.a); 
+        this._startButton.OnClick += new SimpleButton.ClickEventHandler(this.clickStartButton); 
         this._startButton.ZIndex = 1;
         this._startButton.IsEnabled = true; //Default Enable true;
         this._startButton.SetFrames = SpinButton.normal;
+        this._symbolHelio = new AnimatedSprite(new Rect(1, 2, 1, 1), SymbolHelio.normal, true, "HelioSymbol", "Background", 1f);
+        this._symbolHelio.gotoAndPlay(); 
     }
 
-    public void a() { 
-        Game.instance.service.send("login", new Dictionary<string, string>() { { "name", "emre"} });
-    }
-
-    void Update() {
-        if (Input.GetKeyDown("q")) {
-            EventManager.on("backgroundStatus", "q pressed");
-        }
-    }
+    public void clickStartButton() {
+        EventManager.on("backgroundStatus", "start"); 
+    } 
 }
