@@ -31,6 +31,8 @@ public class MainGame: MonoBehaviour {
     }
 
     void onAnimationStatus(string action) {
+        string[] za = action.Split(' '); 
+        Debug.Log(za.Length+ " " + za[0] + " " + za[1]);
         Debug.Log("Animation Update" + action);
     } 
 }

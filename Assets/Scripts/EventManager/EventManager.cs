@@ -57,10 +57,16 @@ public class EventManager : MonoBehaviour {
 
     public static void on(string eventName, params string[] eventParam) {
         Action<string> thisEvent = null;
+        string[] a = new string[eventParam.Length];
         if (instance.eventDictionary.TryGetValue(eventName, out thisEvent)) {
             for (int i = 0; i < eventParam.Length; i++) {
-                thisEvent.Invoke(eventParam[i]);
+                a[i] = eventParam[i];
+          
             }
+
+            thisEvent.Invoke(a[0].ToString()+ " " + a[1].ToString());
         }
+
+
     }
 }
