@@ -4,10 +4,11 @@ using System.Collections.Generic;
 
 public class MainGame: MonoBehaviour { 
     private GameObject _dataController;
+    private GameObject _backgroundController; 
     private Action<string> _storageUpdate;
     private Action<string> _animationStatus;
 
-    private void Awake() {
+    private void Awake() { 
         DataController _dataController = gameObject.AddComponent<DataController>() as DataController;
         BackgroundController _backgroundController = gameObject.AddComponent<BackgroundController>() as BackgroundController;
         this.initEvents();
@@ -30,6 +31,8 @@ public class MainGame: MonoBehaviour {
     }
 
     void onAnimationStatus(string action) {
+        string[] za = action.Split(' '); 
+        Debug.Log(za.Length+ " " + za[0] + " " + za[1]);
         Debug.Log("Animation Update" + action);
     } 
 }

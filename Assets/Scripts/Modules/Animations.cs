@@ -23,12 +23,12 @@ public class Animations : MonoBehaviour {
         if (Input.GetKeyDown("a")) {
             this._stormAnimation.SetTrigger("StormStart");
             this._weaponAnimation.SetTrigger("WeaponStart"); 
-            EventManager.on("animationStatus", "AnimationStart");
+            EventManager.on("animationStatus", "AnimationStart", "anan", "asda");
         }
-        else if (Input.GetKeyUp("a")) { 
-            this._stormAnimation.SetTrigger("StormStop");
-            this._weaponAnimation.SetTrigger("WeaponStop"); 
-            EventManager.on("animationStatus", "AnimationStop");
-        }
+        //else if (Input.GetKeyUp("a")) { 
+        //    this._stormAnimation.SetTrigger("StormStop");
+        //    this._weaponAnimation.SetTrigger("WeaponStop"); 
+        //    EventManager.on("animationStatus", "AnimationStop");
+        //}
     }
 }

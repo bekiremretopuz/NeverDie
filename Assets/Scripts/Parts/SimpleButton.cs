@@ -22,7 +22,7 @@ public class SimpleButton {
         this._size = new Vector2(PositionSize.width, PositionSize.height); 
         this._name = name;
         this._texture = Resources.Load<Sprite>(textureName) as Sprite;
-
+         
         var container = GameObject.Find(parent.ToString());
         this._button = new GameObject();
         this._button.AddComponent<CanvasRenderer>();
